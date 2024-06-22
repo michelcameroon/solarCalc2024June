@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Projects</title>
+</head>
+<body>
+    <h1>Projects</h1>
+    <ul>
+        {% for project in projects %}
+            <li>{{ project.name }} - {{ project.contact }} - {{ project.description }} 
+                <a href="{{ url_for('edit_project', id=project.id) }}">Edit</a> 
+                <a href="{{ url_for('delete_project', id=project.id) }}">Delete</a>
+            </li>
+        {% endfor %}
+    </ul>
+    <a href="{{ url_for('add_project') }}">Add Project</a>
+</body>
+</html>
